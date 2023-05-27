@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --main-bg: hsl(185, 75%, 39%);
+  --main-font: hsl(229, 23%, 23%);
+  --main-font-number: hsl(227, 10%, 46%);
+  --main-font-paragraph: hsl(0, 0%, 59%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px !important;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0 1.3rem;
+  background-image: url(images/bg-pattern-top.svg), url(images/bg-pattern-bottom.svg);
+  background-color: var(--main-bg);
+  background-position: bottom 35vh right 45vw, top 43vh left 32vw;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 8px 24px -14px rgba(66, 68, 90, 1);
+  -moz-box-shadow: 0px 8px 24px -14px rgba(66, 68, 90, 1);
+  box-shadow: 0px 8px 24px -14px rgba(66, 68, 90, 1);
+}
+
+.card .card-header {
+  display: flex;
+  flex-direction: column;
+  background-color: hsl(0, 0%, 100%);
+  align-items: center;
+  position: relative
+}
+
+.card .card-header .card-profile {
+  padding: 4rem 0 1.5rem 0;
+  text-align: center;
+}
+
+.card-profile .profile-information {
+  margin-bottom: 0.6rem;
+}
+
+.card-profile .profile-information .name {
+  color: var(--main-font);
+  font-weight: 700;
+}
+
+.card-profile .profile-information .age {
+  color: var(--main-font-number);
+}
+
+.card-profile .profile-city {
+  font-size: 0.8rem;
+  color: var(--main-font-number)
+}
+
+.card .card-header .pattern {
+  display: block;
+  max-width: 100%;
+}
+
+.card .card-header .profile-picture {
+  max-width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  translate: 0% -60%;
+  border-radius: 50%;
+  border: 6px solid hsl(0, 0%, 100%);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-position: bottom 35vh right 52vw, top 50vh right;
+  } 
+  
+  .card .card-header .profile-picture {
+    translate: 0% -50%;
+  }
+}
+
+.card .card-footer {
+  background-color: hsl(0, 0%, 100%);
+  border-top: 1px solid hsl(0, 0%, 90%);
+}
+
+.card-footer .social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1.5rem;
+  text-align: center;
+} 
+
+.social-grid .item {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-grid .item .amount {
+  color: var(--main-font);
+  font-weight: 700;
+}
+
+.social-grid .item .type {
+  color: var(--main-font-paragraph);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+}
